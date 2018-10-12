@@ -25,35 +25,46 @@ class TicketController extends Controller
      */
     public function create()
     {
-        //
+        return view('tickets.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'summary' => 'required',
+            'description' => 'required',
+            'status' => 'required'
+        ]);
+        $ticket = new Ticket();
+        $ticket->summary = $request->summary;
+        $ticket->description = $request->description;
+        $ticket->status = $request->status;
+        $ticket->save();
+
+        return redirect()->route('tickets.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Ticket  $ticket
+     * @param  \App\Ticket $ticket
      * @return \Illuminate\Http\Response
      */
     public function show(Ticket $ticket)
     {
-        //
+        return view('tickets.show',compact('ticket'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Ticket  $ticket
+     * @param  \App\Ticket $ticket
      * @return \Illuminate\Http\Response
      */
     public function edit(Ticket $ticket)
@@ -64,19 +75,30 @@ class TicketController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Ticket  $ticket
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Ticket $ticket
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Ticket $ticket)
     {
-        //
+        $this->validate($request, [
+            'summary' => 'required',
+            'description' => 'required',
+            'status' => 'required'
+        ]);
+
+        $ticket->summary = $request->summary;
+        $ticket->description = $request->description;
+        $ticket->status = $request->status;
+        $ticket->save();
+
+        return redirect()->route('tickets.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Ticket  $ticket
+     * @param  \App\Ticket $ticket
      * @return \Illuminate\Http\Response
      */
     public function destroy(Ticket $ticket)
