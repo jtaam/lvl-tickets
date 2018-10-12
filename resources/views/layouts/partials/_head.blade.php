@@ -5,7 +5,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{asset('favicon.ico')}}">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>{{config('app.name')}} - @yield('title')</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://127.0.0.1:8888/public/cdn/bootstrap-4/css/bootstrap.min.css" rel="stylesheet">

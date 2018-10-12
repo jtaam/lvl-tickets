@@ -7,13 +7,13 @@
 <script src="http://127.0.0.1:8888/public/cdn/bootstrap-4/js/bootstrap.min.js"></script>
 
 <!-- Icons -->
-<script src="http://127.0.0.1:8888/public/cdn/feather/feather.min.js"></script>
+<script src="{{asset('js/feather.min.js')}}"></script>
 <script>
     feather.replace()
 </script>
 
 <!-- Graphs -->
-<script src="http://127.0.0.1:8888/public/cdn/chart/Chart.min.js"></script>
+<script src="{{asset('js/Chart.min.js')}}"></script>
 <script>
     var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {
