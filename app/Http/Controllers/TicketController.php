@@ -57,7 +57,7 @@ class TicketController extends Controller
         $ticket->status = $request->status;
         $ticket->save();
 
-        return redirect()->route('tickets.index');
+        return redirect()->route('tickets.index')->withSuccess('Ticket has been saved!');
     }
 
     /**

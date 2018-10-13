@@ -3,7 +3,27 @@
 @section('title','Dashboard')
 
 @push('css')
+    <style>
+        ul.pagination{
+            margin-bottom: 100px;
+        }
+        ul.pagination li {
+            margin-right: 5px;
+        }
+        ul.pagination li a {
+            background-color: rgb(39, 43, 48);
+            padding: 5px 8px;
+            color: white;
+            display: block;
+        }
 
+        ul.pagination li.disabled span {
+            background-color: darkgrey;
+            padding: 5px 8px;
+            color: white;
+            display: block;
+        }
+    </style>
 @endpush
 
 @section('content')

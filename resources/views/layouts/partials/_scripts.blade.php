@@ -43,3 +43,4 @@
         }
     });
 </script>
+@stack('js')

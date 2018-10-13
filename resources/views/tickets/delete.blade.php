@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-danger">Delete</button>
-                    <a href="./" class="btn btn-warning">Back</a>
+                    <a href="{{route('tickets.index')}}" class="btn btn-warning">Back</a>
                 </div>
             </form>
         </div>
