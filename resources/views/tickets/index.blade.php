@@ -21,14 +21,15 @@
                 </button>
             </div>
         </div>
-        <a class="btn btn-sm btn-primary mb-3" href="{{route('tickets.create')}}">Add New Ticket</a>
+        <a class="btn btn-primary btn-lg mb-3" href="{{route('tickets.create')}}">Add New Ticket</a>
+        @include('layouts.partials._alerts')
         {{--<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>--}}
 
         <div class="table-responsive">
             <table class="table table-striped table-sm">
                 <thead>
                 <tr>
-                    <th>No #</th>
+                    <th>No#</th>
                     <th>Summary</th>
                     <th>Description</th>
                     <th>Status</th>
@@ -46,12 +47,15 @@
                         <td>{{$ticket->created_at}}</td>
                         <td>
                             <a href="{{route('tickets.show',$ticket->id)}}" class="btn btn-sm btn-info">Update</a>
-                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                            <a href="{{route('tickets.delete',$ticket->id)}}" class="btn btn-sm btn-warning">Delete</a>
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
+            <div class="" style="justify-content:center;align-items:center;">
+                {{$tickets->links()}}
+            </div>
         </div>
     </main>
 @endsection
