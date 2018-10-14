@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\OpenTicketDescriptionRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class TicketUpdateRequest extends FormRequest
@@ -25,7 +26,7 @@ class TicketUpdateRequest extends FormRequest
     {
         return [
             'summary' => 'required',
-            'description' => 'required|min:10'
+            'description' => [new OpenTicketDescriptionRule()]
         ];
     }
 }
