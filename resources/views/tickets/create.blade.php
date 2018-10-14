@@ -26,11 +26,21 @@
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="summary">Summary</label>
-                    <input type="text" class="form-control" name="summary" id="summary" />
+                    @if($errors->has('summary'))
+                        <span class="help-block text-danger float-right">
+                            <strong>{{$errors->first('summary')}}</strong>
+                        </span>
+                    @endif
+                    <input type="text" class="form-control {{$errors->has('summary') ? 'is-invalid':''}}" name="summary" id="summary" />
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea name="description" id="description" class="form-control"  cols="30" rows="10"></textarea>
+                    @if($errors->has('description'))
+                        <span class="help-block text-danger float-right">
+                            <strong>{{$errors->first('description')}}</strong>
+                        </span>
+                    @endif
+                    <textarea name="description" id="description" class="form-control {{$errors->has('description') ? 'is-invalid':''}}"  cols="30" rows="10"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="status">Status</label>

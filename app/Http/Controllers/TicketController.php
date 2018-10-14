@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TicketUpdateRequest;
 use App\Ticket;
 use Illuminate\Http\Request;
 
@@ -44,13 +45,8 @@ class TicketController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TicketUpdateRequest $request)
     {
-        $this->validate($request, [
-            'summary' => 'required',
-            'description' => 'required',
-            'status' => 'required'
-        ]);
         $ticket = new Ticket();
         $ticket->summary = $request->summary;
         $ticket->description = $request->description;
@@ -89,14 +85,8 @@ class TicketController extends Controller
      * @param  \App\Ticket $ticket
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ticket $ticket)
+    public function update(TicketUpdateRequest $request, Ticket $ticket)
     {
-        $this->validate($request, [
-            'summary' => 'required',
-            'description' => 'required',
-            'status' => 'required'
-        ]);
-
         $ticket->summary = $request->summary;
         $ticket->description = $request->description;
         $ticket->status = $request->status;
