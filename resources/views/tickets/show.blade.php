@@ -47,9 +47,10 @@
                 <div class="form-group">
                     <label for="status">Status</label>
                     <select class="form-control" id="status" name="status" value="{{$ticket->status}}">
-                        <option value="Open" {{$ticket->status == 'Open'?'selected':''}}>Open</option>
-                        <option value="In Progress" {{$ticket->status == 'In Progress'?'selected':''}}>In Progress</option>
-                        <option value="Closed" {{$ticket->status == 'Closed'?'selected':''}}>Closed</option>
+                        {{--<option value="Open" {{$ticket->status == 'Open'?'selected':''}}>Open</option>--}}
+                        {{--<option value="In Progress" {{$ticket->status == 'In Progress'?'selected':''}}>In Progress</option>--}}
+                        {{--<option value="Closed" {{$ticket->status == 'Closed'?'selected':''}}>Closed</option>--}}
+                        @include('layouts.partials._statuses')
                     </select>
                 </div>
                 <div class="form-group">

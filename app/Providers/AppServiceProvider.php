@@ -15,6 +15,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(141);
+
+        \View::composer('layouts.partials._statuses',function($view){
+           $view->with('statuses',\App\Status::all());
+        });
     }
 
     /**

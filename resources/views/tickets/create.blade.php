@@ -45,9 +45,7 @@
                 <div class="form-group">
                     <label for="status">Status</label>
                     <select class="form-control" id="status" name="status">
-                        <option value="Open">Open</option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Closed">Closed</option>
+                        @include('layouts.partials._statuses')
                     </select>
                 </div>
                 <div class="form-group">
