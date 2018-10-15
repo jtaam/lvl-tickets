@@ -15,7 +15,7 @@ class TicketController extends Controller
      */
     public function index()
     {
-        $tickets = Ticket::latest()->simplePaginate(20);
+        $tickets = Ticket::latest()->paginate(15);
         return view('tickets.index', compact('tickets'));
     }
 

@@ -4,26 +4,46 @@
 
 @push('css')
     <style>
-        ul.pagination{
-            margin-bottom: 100px;
+        .pagination>li>a, .pagination>li>span {
+            position: relative;
+            float: left;
+            padding: 6px 12px;
+            line-height: 1.6;
+            text-decoration: none;
+            color: #3097d1;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-left: -1px;
         }
-        ul.pagination li {
-            margin-right: 5px;
-        }
-        ul.pagination li a {
-            background-color: rgb(39, 43, 48);
-            padding: 5px 8px;
-            color: white;
-            display: block;
-        }
-
-        ul.pagination li.disabled span {
-            background-color: darkgrey;
-            padding: 5px 8px;
-            color: white;
-            display: block;
+        .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+            z-index: 3;
+            color: #fff;
+            background-color: #3097d1;
+            border-color: #3097d1;
+            cursor: default;
         }
     </style>
+    {{--<style>--}}
+        {{--ul.pagination{--}}
+            {{--margin-bottom: 100px;--}}
+        {{--}--}}
+        {{--ul.pagination li {--}}
+            {{--margin-right: 5px;--}}
+        {{--}--}}
+        {{--ul.pagination li a {--}}
+            {{--background-color: rgb(39, 43, 48);--}}
+            {{--padding: 5px 8px;--}}
+            {{--color: white;--}}
+            {{--display: block;--}}
+        {{--}--}}
+
+        {{--ul.pagination li.disabled span {--}}
+            {{--background-color: darkgrey;--}}
+            {{--padding: 5px 8px;--}}
+            {{--color: white;--}}
+            {{--display: block;--}}
+        {{--}--}}
+    {{--</style>--}}
 @endpush
 
 @section('content')
